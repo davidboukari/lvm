@@ -1,5 +1,15 @@
 # lvm
 
+##
+Need Kernel Device mapper support
+```bash
+lsmod | grep dm_mod
+echo "dm-mod" >> /etc/modprobe.preload
+vgscan
+```
+
+
+# vgscan
 
 ## Example
 physical disk1 
