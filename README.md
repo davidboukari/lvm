@@ -23,4 +23,9 @@ lvs
 pvresize --setphysicalvolumesize 14G /dev/vda5
 
 lvextend -L 20G /dev/groupe1/lv1
+lvextend  -l  +200 /dev/mapper/vgappdata-lvappdata
+
+resize2fs /dev/groupe1/lv1
+
+xfs_growfs 
 ```
