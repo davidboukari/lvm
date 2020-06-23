@@ -1,7 +1,7 @@
 # lvm
 
 ##
-Need Kernel Device mapper support
+Need Kernel Device mapper support raid module
 ```bash
 lsmod | grep dm_mod
 echo "dm-mod" >> /etc/modprobe.preload
@@ -23,6 +23,9 @@ lv2 is created on groupe1
 ## commands
 
 ```bash
+pvdisplay -v 
+vgdisplay -v
+lvdisplay -v
 pvs
 vgs
 lvs
