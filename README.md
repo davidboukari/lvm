@@ -31,7 +31,29 @@ vgs
 lvs
 ```
 
-# Increase or decrease disk size
+# Add a disk or partition
+```bash
+fdisk /dev/sdb 
+# create the partition
+
+parprobe /dev/sdb
+cat /proc/partition
+
+pvdisplay -v
+pvcreate /dev/sda1
+lvmdiskscan -l
+vgdisplay -v
+vgextend /dev/sda3 centos
+vgextend centos /dev/sda3
+lvm lvextend -L+5G /dev/mapper/centos-root
+# if ext4 resize2fs of xfs_grow if xfs
+resize2fs  /dev/centos/root
+or
+xfs_growfs /dev/centos/root
+
+```
+
+## Increase or decrease disk size
 ```bash
 pvresize --setphysicalvolumesize 14G /dev/vda5
 
