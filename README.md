@@ -32,6 +32,7 @@ lvs
 ```
 
 # Add a disk or partition
+* https://www.cyberciti.biz/faq/howto-add-disk-to-lvm-volume-on-linux-to-increase-size-of-pool/
 ```bash
 fdisk /dev/sdb 
 # create the partition
