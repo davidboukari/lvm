@@ -62,7 +62,7 @@ n: primary
 p: type 8e
 
 * Create pv
-pvcreate /dev/vdb
+pvcreate /dev/sdb
 * Add pv to group
 vgextend cl /dev/sdb
 * Extend the lv
