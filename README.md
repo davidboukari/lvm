@@ -55,23 +55,26 @@ xfs_growfs /dev/centos/root
 ```
 
 ## Add new disk to as ps add to lvmgroup and extend a pv
+* https://www.cyberciti.biz/faq/howto-add-disk-to-lvm-volume-on-linux-to-increase-size-of-pool/
 ```
 * New 
 fdisk /dev/sdb
 n: primary 
 p: type 8e
 
-* Create pv
+# Create pv
 pvcreate /dev/sdb
-* Add pv to group
+
+# Add pv to group
 vgextend cl /dev/sdb
-* Extend the lv
+
+# Extend the lv
 lvextend -L+5G  /dev/cl/root
 
-
-
-
-
+# if ext4 resize2fs of xfs_grow if xfs
+resize2fs  /dev/centos/root
+or
+xfs_growfs /dev/centos/root
 ```
 
 
