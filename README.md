@@ -54,6 +54,27 @@ xfs_growfs /dev/centos/root
 
 ```
 
+## Add new disk to as ps add to lvmgroup and extend a pv
+```
+* New 
+fdisk /dev/sdb
+n: primary 
+p: type 8e
+
+* Create pv
+pvcreate /dev/vdb
+* Add pv to group
+vgextend cl /dev/sdb
+* Extend the lv
+lvextend -L+5G  /dev/cl/root
+
+
+
+
+
+```
+
+
 ## Increase or decrease disk size
 ```bash
 # Increase the physical volume
