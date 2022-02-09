@@ -54,6 +54,15 @@ xfs_growfs /dev/centos/root
 
 ```
 
+## Create a logical volume
+```
+lvcreate -L 10G -n lvtest /dev/vg
+  WARNING: PV /dev/sda3 in VG vg is using an old PV header, modify the VG to update.
+  WARNING: updating PV header on /dev/sda3 for VG vg.
+  Logical volume "lvtest" created.
+
+```
+
 ## Add new disk to as ps add to lvmgroup and extend a pv
 * https://www.cyberciti.biz/faq/howto-add-disk-to-lvm-volume-on-linux-to-increase-size-of-pool/
 ```
