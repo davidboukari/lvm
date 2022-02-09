@@ -1,6 +1,6 @@
 # lvm
 
-##
+## To detect the LVM
 Need Kernel Device mapper support raid module
 ```bash
 lsmod | grep dm_mod
@@ -44,9 +44,23 @@ pvdisplay -v
 pvcreate /dev/sda1
 lvmdiskscan -l
 vgdisplay -v
-vgextend /dev/sda3 centos
+
+# Add pv in a vg 
 vgextend centos /dev/sda3
-lvm lvextend -L+5G /dev/mapper/centos-root
+
+# Create an LV
+lvcreate -L 10G -n lvtest /dev/vg
+
+# Extend a LV
+lvm lvextend -L +5G /dev/mapper/centos-root
+
+# Decrease an LV
+lvm lvextend -L -5G /dev/mapper/centos-root
+
+# Set directly a size for an LV
+lvm lvextend -L 15G /dev/mapper/centos-root
+
+
 # if ext4 resize2fs of xfs_grow if xfs
 resize2fs  /dev/centos/root
 or
