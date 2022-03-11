@@ -52,13 +52,13 @@ vgextend centos /dev/sda3
 lvcreate -L 10G -n lvtest /dev/vg
 
 # Extend a LV
-lvm lvextend -L +5G /dev/mapper/centos-root
+lvextend -L +5G /dev/mapper/centos-root
 
 # Decrease an LV
-lvm lvextend -L -5G /dev/mapper/centos-root
+lvextend -L -5G /dev/mapper/centos-root
 
 # Set directly a size for an LV
-lvm lvextend -L 15G /dev/mapper/centos-root
+lvextend -L 15G /dev/mapper/centos-root
 
 
 # if ext4 resize2fs of xfs_grow if xfs
