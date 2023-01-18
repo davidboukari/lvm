@@ -60,6 +60,13 @@ lvextend -L -5G /dev/mapper/centos-root
 # Set directly a size for an LV
 lvextend -L 15G /dev/mapper/centos-root
 
+# Increase  +15G a size for an LV
+lvextend -L +15G /dev/mapper/centos-root
+
+
+# Set 100%   a size for an LV
+lvextend -l 100 /dev/mapper/centos-root
+
 
 # if ext4 resize2fs of xfs_grow if xfs
 resize2fs  /dev/centos/root
