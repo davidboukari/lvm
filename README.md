@@ -65,7 +65,9 @@ lvextend -L +15G /dev/mapper/centos-root
 
 
 # Set 100%   a size for an LV
-lvextend -l 100 /dev/mapper/centos-root
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/ubuntu-vg/ubuntu-lv 
+
 
 
 # if ext4 resize2fs of xfs_grow if xfs
