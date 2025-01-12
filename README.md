@@ -112,6 +112,9 @@ xfs_growfs /dev/centos/root
 
 ## Increase or decrease disk size
 ```bash
+# resize 200% the physical volume
+pvresize --setphysicalvolumesize /dev/vda5
+
 # Increase the physical volume
 pvresize --setphysicalvolumesize 14G /dev/vda5
 
