@@ -1,5 +1,14 @@
 # lvm
 
+
+## Increase disk / partition
+```
+growpart /dev/sda 4
+
+lvmextend -L+10G /dev/mapper/vg_root-home; xfs_growfs /dev/mapper/vg_root-home
+
+```
+
 ## To detect the LVM
 Need Kernel Device mapper support raid module
 ```bash
